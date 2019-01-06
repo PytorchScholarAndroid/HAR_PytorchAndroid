@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="har_android_pytorch.har_android.MainFragment">
+
+    <TextView
+        android:id="@+id/tv_data_checking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Your inputs are: \n    Gyropscope"/>
+
+    <TextView
+        android:layout_below="@id/tv_data_checking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_gyroscopeX"
+        android:text="X - Value: "
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_gyroscopeY"
+        android:layout_below="@+id/tv_gyroscopeX"
+        android:text="Y - Value: "
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_gyroscopeZ"
+        android:layout_below="@+id/tv_gyroscopeY"
+        android:text="Z - Value: "
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:text="Accelerator:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_accelerator"
+        android:layout_below="@id/tv_gyroscopeZ"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_acceleartionX"
+        android:layout_below="@+id/tv_accelerator"
+        android:text="X - Value: "
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_acceleartionY"
+        android:layout_below="@+id/tv_acceleartionX"
+        android:text="Y - Value: "
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_acceleartionZ"
+        android:layout_below="@+id/tv_acceleartionY"
+        android:text="Z - Value: "
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_linear_accerleration"
+        android:layout_below="@+id/tv_acceleartionZ"
+        android:text="Linear Acceleration"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_linaccX"
+        android:text="X - Value: "
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_linear_accerleration"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_linaccY"
+        android:layout_below="@+id/tv_linaccX"
+        android:text="Y - Value: "
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_linaccZ"
+        android:layout_below="@+id/tv_linaccY"
+        android:text="Z - Value: "
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_text_action"
+        android:layout_below="@+id/tv_linaccZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Action:"
+        android:layout_centerInParent="true"
+        android:textSize="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_current_action"
+        android:layout_below="@+id/tv_text_action"
+        android:text="You are currently doing nothing"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>
