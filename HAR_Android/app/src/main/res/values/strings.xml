@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">HAR</string>
     <string name="action_settings">Settings</string>
+    <string name="splash_screen_image">splash screen image</string>
+    <string name="har">Human Activity Recognition</string>
+    <string name="hbs">Human body silhouette</string>
 </resources>
