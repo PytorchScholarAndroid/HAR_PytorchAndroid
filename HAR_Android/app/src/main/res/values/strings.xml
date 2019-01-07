@@ -4,4 +4,17 @@
     <string name="splash_screen_image">splash screen image</string>
     <string name="har">Human Activity Recognition</string>
     <string name="hbs">Human body silhouette</string>
+
+    <string name="inputs_are">Your current movement are …</string>
+    <string name="gyroscope">Gyroscope</string>
+    <string name="linear_acceleration">Linear Acceleration</string>
+    <string name="accelerator">Accelerator</string>
+
+    <string name="current_action">Current Action</string>
+    <string name="currently_doing_nothing">You are currently doing nothing.</string>
+    <string name="na">--</string>
+    <string name="x_value">X - Value:</string>
+    <string name="y_value">Y - Value:</string>
+    <string name="z_value">Z - Value:</string>
+    <string name="table_logo">table logo</string>
 </resources>

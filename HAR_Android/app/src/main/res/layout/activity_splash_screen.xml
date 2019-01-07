@@ -24,7 +24,7 @@
         android:layout_marginBottom="@dimen/dimen_20"
         android:layout_centerVertical="true"
         android:layout_above="@id/har"
-        android:src="@drawable/standing_human_body_silhouette"
+        android:src="@drawable/standing_human_body_silhouette_512"
         android:contentDescription="@string/hbs"
         android:scaleType="centerInside" />
 
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dimen_140"
+        android:layout_marginBottom="@dimen/dimen_100"
         android:gravity="center"
         android:text="@string/har"
         android:layout_alignParentBottom="true"

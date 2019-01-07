@@ -1,128 +1,211 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="har_android_pytorch.har_android.MainFragment">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="har_android_pytorch.har_android.MainFragment">
 
     <TextView
         android:id="@+id/tv_data_checking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Your inputs are: \n    Gyropscope"/>
+        android:layout_margin="@dimen/dimen_8"
+        android:padding="@dimen/dimen_8"
+        android:gravity="center"
+        android:text="@string/inputs_are"
+        android:textSize="@dimen/size_24"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Table logo -->
+    <ImageView
+        android:id="@+id/hbs"
+        android:layout_width="@dimen/dimen_52"
+        android:layout_height="@dimen/dimen_80"
+        android:layout_margin="@dimen/dimen_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_hbs"
+        android:contentDescription="@string/table_logo"/>
+
+    <!-- Table titles -->
+    <TextView
+        android:id="@+id/tv_gyroscope"
+        style="@style/heading1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gyroscope"
+        app:layout_constraintStart_toEndOf="@id/hbs"
+        app:layout_constraintEnd_toStartOf="@id/tv_accelerator"
+        app:layout_constraintBottom_toBottomOf="@id/tv_accelerator"/>
 
     <TextView
-        android:layout_below="@id/tv_data_checking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_gyroscopeX"
-        android:text="X - Value: "
-        android:layout_centerHorizontal="true"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_gyroscopeY"
-        android:layout_below="@+id/tv_gyroscopeX"
-        android:text="Y - Value: "
-        android:layout_centerHorizontal="true"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_gyroscopeZ"
-        android:layout_below="@+id/tv_gyroscopeY"
-        android:text="Z - Value: "
-        android:layout_centerHorizontal="true"
-        />
-
-    <TextView
-        android:text="Accelerator:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tv_accelerator"
-        android:layout_below="@id/tv_gyroscopeZ"
-        android:layout_centerHorizontal="true"
-        />
-    <TextView
+        style="@style/heading1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_acceleartionX"
-        android:layout_below="@+id/tv_accelerator"
-        android:text="X - Value: "
-        android:layout_centerHorizontal="true"
-        />
+        android:text="@string/accelerator"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:layout_constraintStart_toEndOf="@id/tv_gyroscope"
+        app:layout_constraintEnd_toStartOf="@+id/tv_linear_acceleration"
+        app:layout_constraintTop_toBottomOf="@id/tv_data_checking" />
 
     <TextView
+        android:id="@+id/tv_linear_acceleration"
+        style="@style/heading1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_acceleartionY"
-        android:layout_below="@+id/tv_acceleartionX"
-        android:text="Y - Value: "
+        android:text="@string/linear_acceleration"
+        android:layout_marginEnd="@dimen/dimen_16"
+        app:layout_constraintBottom_toTopOf="@+id/tv_accelerator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_accelerator"/>
+
+    <!-- Table X,Y,Z titles -->
+    <TextView
+        android:id="@+id/tv_X_value"
+        style="@style/heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_gyroscope"
         android:layout_centerHorizontal="true"
-        />
+        android:text="@string/x_value"
+        app:layout_constraintTop_toBottomOf="@id/tv_gyroscope"/>
 
     <TextView
+        android:id="@+id/tv_Y_value"
+        style="@style/heading2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_acceleartionZ"
-        android:layout_below="@+id/tv_acceleartionY"
-        android:text="Z - Value: "
         android:layout_centerHorizontal="true"
-        />
+        android:text="@string/y_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_X_value"/>
 
     <TextView
+        android:id="@+id/tv_Z_value"
+        style="@style/heading2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_linear_accerleration"
-        android:layout_below="@+id/tv_acceleartionZ"
-        android:text="Linear Acceleration"
         android:layout_centerHorizontal="true"
-        />
+        android:text="@string/z_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Y_value"/>
+
+    <!-- Table X,Y,Z gyroscope values -->
+    <TextView
+        android:id="@+id/tv_gyroscopeX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/na"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_X_value"
+        app:layout_constraintEnd_toEndOf="@+id/tv_gyroscope" />
 
     <TextView
+        android:id="@+id/tv_gyroscopeY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/na"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Z_value"
+        app:layout_constraintEnd_toEndOf="@id/tv_gyroscope"/>
+
+    <TextView
+        android:id="@+id/tv_gyroscopeZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/na"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Z_value"
+        app:layout_constraintEnd_toEndOf="@id/tv_gyroscope"/>
+
+    <!-- Table X,Y,Z accelerator values -->
+    <TextView
+        android:id="@+id/tv_accelerationX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_X_value"
+        app:layout_constraintEnd_toEndOf="@id/tv_accelerator"
+        android:text="@string/na"/>
+
+    <TextView
+        android:id="@+id/tv_accelerationY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Y_value"
+        app:layout_constraintEnd_toEndOf="@id/tv_accelerator"
+        android:text="@string/na"/>
+
+    <TextView
+        android:id="@+id/tv_accelerationZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Z_value"
+        app:layout_constraintEnd_toEndOf="@id/tv_accelerator"
+        android:text="@string/na"/>
+
+    <!-- Table X,Y,Z linear acceleration values -->
+    <TextView
         android:id="@+id/tv_linaccX"
-        android:text="X - Value: "
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tv_linear_accerleration"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/tv_linear_acceleration"
+        app:layout_constraintBottom_toBottomOf="@id/tv_X_value"
+        android:text="@string/na"/>
+
+    <TextView
         android:id="@+id/tv_linaccY"
-        android:layout_below="@+id/tv_linaccX"
-        android:text="Y - Value: "
-        android:layout_centerHorizontal="true"
-        />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_linaccZ"
-        android:layout_below="@+id/tv_linaccY"
-        android:text="Z - Value: "
-        android:layout_centerHorizontal="true"
-        />
+        app:layout_constraintEnd_toEndOf="@id/tv_linear_acceleration"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Y_value"
+        android:text="@string/na"/>
 
+    <TextView
+        android:id="@+id/tv_linaccZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/tv_linear_acceleration"
+        app:layout_constraintBottom_toBottomOf="@id/tv_Z_value"
+        android:text="@string/na"/>
+
+    <TextView
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:layout_marginStart="@dimen/dimen_32"
+        android:layout_marginEnd="@dimen/dimen_32"
+        app:layout_constraintTop_toBottomOf="@id/tv_gyroscopeZ"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/tv_text_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/tv_text_action"
-        android:layout_below="@+id/tv_linaccZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Action:"
         android:layout_centerInParent="true"
-        android:textSize="40dp" />
+        android:text="@string/current_action"
+        android:textSize="@dimen/size_24"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/dimen_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"/>
 
     <TextView
+        android:id="@+id/tv_current_action"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_current_action"
         android:layout_below="@+id/tv_text_action"
-        android:text="You are currently doing nothing"
         android:layout_centerHorizontal="true"
-        />
-
-</RelativeLayout>
+        android:layout_marginTop="@dimen/dimen_8"
+        android:text="@string/currently_doing_nothing"
+        android:textStyle="italic"
+        android:textSize="@dimen/size_20"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/tv_text_action"
+        app:layout_constraintStart_toStartOf="@+id/tv_text_action"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text_action" />
+</android.support.constraint.ConstraintLayout>

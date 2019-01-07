@@ -1,6 +1,5 @@
 package har_android_pytorch.har_android;
 
-import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,22 +7,18 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 
 public class MainActivity extends AppCompatActivity {
+
+    Toolbar mToolbar;
+
     SensorManager sensorManager;
     Sensor gyroscopeSensor;
     Sensor accelerometerSensor;
@@ -66,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mToolbar = findViewById(R.id.main_toolbar);
+        mToolbar.setTitle(R.string.app_name);
+        mToolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
         MainFragment mainFragment = new MainFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -105,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
             linY_textview = findViewById(R.id.tv_linaccY);
             linZ_textview = findViewById(R.id.tv_linaccZ);
 
-            linX_textview.setText("X - Value: " +  Float.toString(linearacceleration_x_value));
-            linY_textview.setText("Y - Value: " +  Float.toString(linearacceleration_y_value));
-            linZ_textview.setText("Z - Value: " +  Float.toString(linearacceleration_z_value));
+            linX_textview.setText( Float.toString(linearacceleration_x_value));
+            linY_textview.setText( Float.toString(linearacceleration_y_value));
+            linZ_textview.setText( Float.toString(linearacceleration_z_value));
         }
 
         @Override
@@ -135,13 +133,13 @@ public class MainActivity extends AppCompatActivity {
             accelerometer_y_value = sensorEvent.values[1];
             accelerometer_z_value = sensorEvent.values[2];
 
-            accX_textview = findViewById(R.id.tv_acceleartionX);
-            accY_textview = findViewById(R.id.tv_acceleartionY);
-            accZ_textview = findViewById(R.id.tv_acceleartionZ);
+            accX_textview = findViewById(R.id.tv_accelerationX);
+            accY_textview = findViewById(R.id.tv_accelerationY);
+            accZ_textview = findViewById(R.id.tv_accelerationZ);
 
-            accX_textview.setText("X - Value: " + Float.toString(accelerometer_x_value));
-            accY_textview.setText("Y - Value: " + Float.toString(accelerometer_y_value));
-            accZ_textview.setText("Z - Value: " + Float.toString(accelerometer_z_value));
+            accX_textview.setText( Float.toString(accelerometer_x_value));
+            accY_textview.setText( Float.toString(accelerometer_y_value));
+            accZ_textview.setText( Float.toString(accelerometer_z_value));
         }
 
         @Override
@@ -161,9 +159,9 @@ public class MainActivity extends AppCompatActivity {
             gyroY_textview = findViewById(R.id.tv_gyroscopeY);
             gyroZ_textview = findViewById(R.id.tv_gyroscopeZ);
 
-            gyroX_textview.setText("X - Value: " +  Float.toString(gyroscope_x_value));
-            gyroY_textview.setText("Y - Value: " +  Float.toString(gyroscope_y_value));
-            gyroZ_textview.setText("Z - Value: " + Float.toString(gyroscope_z_value));
+            gyroX_textview.setText( Float.toString(gyroscope_x_value));
+            gyroY_textview.setText( Float.toString(gyroscope_y_value));
+            gyroZ_textview.setText( Float.toString(gyroscope_z_value));
 
         }
 
