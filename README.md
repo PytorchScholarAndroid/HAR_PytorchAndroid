@@ -19,4 +19,5 @@ This REPO in particular aims to combine the different HAR approaches with an int
 <hr > 
 
 ## The App - a visual 
+*Normally the Gyroscope also works (In this case the gyroscope of the specific smartphone doesn't seem to work)* 
 ![basic screen](Basic_Screen_WithoutGyroscope.png)
