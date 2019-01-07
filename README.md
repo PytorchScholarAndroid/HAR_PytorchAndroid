@@ -19,3 +19,4 @@ This REPO in particular aims to combine the different HAR approaches with an int
 <hr > 
 
 ## The App - a visual 
+![basic screen](visuals/Basic_Screen_WithoutGyroscope.png)
