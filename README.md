@@ -10,6 +10,7 @@ This REPO in particular aims to combine the different HAR approaches with an int
 3. Run it on your mobile phone 
 
 --> Downloadable .APK will be uploaded soon 
+<br>
 *UNFORTUNATELY the conversion from pytorch to android hasn't quite worked until now!*
 
 * **What are the various command line parameters which could be changed and how to change them**
