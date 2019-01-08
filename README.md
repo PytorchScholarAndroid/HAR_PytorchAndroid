@@ -7,8 +7,8 @@ This REPO in particular aims to combine the different HAR approaches with an int
 * **PytorchScholarAndroid-GitHub-Structure**
 --> For now the most important parts can be found in: 
 1. The Data-Loading from the UCI in the Notebook of HAR_LSTM and HAR_CNN
-2. The RNN-Model in the HAR_RNN_CNN (the training as .... and the saved model as .....)
-3. The Android Application in the HAR-Android-Repo
+2. The RNN-Model in the HAR_RNN_CNN (the training as har_rnn.py and the saved model as har_rnn_state.pth)
+3. The Android Application in the HAR-PyTorchAndroid-Repo
 
 * **How to run the project**  
 1. Clone this REPO
