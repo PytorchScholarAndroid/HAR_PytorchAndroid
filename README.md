@@ -4,6 +4,12 @@ This is the official repository for the Android Part of the HAR app
 This Repo is part of the porject/community *Mobile applications for non intrusive medical surveillance using Human Activity Recognition Technology.*
 This REPO in particular aims to combine the different HAR approaches with an intelligent post processing of the recognized activities and implement the whole process in a usable android application. 
 
+* **PytorchScholarAndroid-GitHub-Structure**
+--> For now the most important parts can be found in: 
+1. The Data-Loading from the UCI in the Notebook of HAR_LSTM and HAR_CNN
+2. The RNN-Model in the HAR_RNN_CNN (the training as .... and the saved model as .....)
+3. The Android Application in the HAR-Android-Repo
+
 * **How to run the project**  
 1. Clone this REPO
 2. IMPORT the whole project into Android Studio 
