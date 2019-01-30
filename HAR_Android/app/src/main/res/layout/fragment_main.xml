@@ -73,6 +73,7 @@
         android:layout_below="@id/tv_gyroscope"
         android:layout_centerHorizontal="true"
         android:text="@string/x_value"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_gyroscope"/>
 
     <TextView
@@ -82,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/y_value"
+        app:layout_constraintStart_toStartOf="@id/tv_X_value"
         app:layout_constraintTop_toBottomOf="@+id/tv_X_value"/>
 
     <TextView
@@ -91,6 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/z_value"
+        app:layout_constraintStart_toStartOf="@id/tv_X_value"
         app:layout_constraintTop_toBottomOf="@+id/tv_Y_value"/>
 
     <!-- Table X,Y,Z gyroscope values -->
